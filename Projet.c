@@ -187,6 +187,7 @@ int main() {
     int grille[100][100] = {0};
 
     printf("\n");
+    
     AfficherGrille(grille);
     GrilleDebut(grille, cellule_vivante, cellule_mort);
 
