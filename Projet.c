@@ -1,12 +1,37 @@
 // Include necessary libraries
 #include <stdio.h>
 #include <Windows.h>
-#include <SLD2/SDL.h>
+#include <SDL2/SDL.h>
 
 
 // Define constants for grid size
 #define max_y 10
 #define max_x 100
+
+const int WIDTH = 800, HEIGHT = 600;
+
+int main(int argc, char** argv) {
+    // Initialize SDL
+    SDL_Init( SDL_INIT_EVERYTHING);
+    SDL_Window *window = SDL_CreateWindow( "Hello world", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT);
+    if (window == NULL) {
+        std::cout << "Window could not be created! SDL Error: " << SDL_GetError();
+        return 1;
+    }
+    SDL_Event windowEvent;
+
+    while (true) {
+        if (SDL_PollEvent(&windowEvent)) {
+            if (windowEvent.type == SDL_QUIT)
+            {break;}
+        }
+    }
+
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+
+    return EXIT_SUCCESS;
+}
 
 int main() {
     // Declare necessary variables and arrays
