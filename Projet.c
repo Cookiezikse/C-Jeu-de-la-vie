@@ -1,6 +1,8 @@
 // Include necessary libraries
 #include <stdio.h>
 #include <Windows.h>
+#include <SLD2/SDL.h>
+
 
 // Define constants for grid size
 #define max_y 10
