@@ -30,7 +30,7 @@ void InitSetup() {
     SDL_SetWindowTitle(screen, "Game of Life");
 }
 
-int GrilleDebut(int grille[][MAX_X]) {
+int GrilleDebut(int grille[MAX_Y][MAX_X]) {
     int rep11 = 0;
     int rep22 = 0;
     int cases = 0;    
@@ -58,7 +58,7 @@ int GrilleDebut(int grille[][MAX_X]) {
     return 0;
 }
 
-void AfficherGrille(int grille[][MAX_X]) {
+void AfficherGrille(int grille[MAX_Y][MAX_X]) {
     for (int i = 0; i < MAX_Y; i++) {
         for (int j = 0; j < MAX_X; j++) {
             printf("%d ", grille[i][j]);
@@ -67,7 +67,7 @@ void AfficherGrille(int grille[][MAX_X]) {
     }
 }
 
-void Count(int grille[][MAX_X]) {
+void Count(int grille[MAX_Y][MAX_X]) {
     int temp[MAX_Y][MAX_X] = { 0 };
     for (int l = 0; l < MAX_Y; l++) {
         for (int m = 0; m < MAX_X; m++) {
