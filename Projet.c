@@ -9,8 +9,8 @@
 // Global variables
 const int WIDTH = 800;
 const int HEIGHT = 800;
-const int CELL_W = WIDTH / MAX_X;
-const int CELL_H = HEIGHT / MAX_Y;
+const int CELL_W = 800 / MAX_X;
+const int CELL_H = 800 / MAX_Y;
 
 // Function prototypes
 void InitSetup();
