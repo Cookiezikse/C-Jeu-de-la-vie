@@ -145,15 +145,6 @@ int GrilleDebut(int grille[MAX_Y][MAX_X]) {
     return 0;
 }
 
-// void AfficherGrille(int grille[MAX_Y][MAX_X]) {
-//     for (int i = 0; i < MAX_Y; i++) {
-//         for (int j = 0; j < MAX_X; j++) {
-//             printf("%d ", grille[i][j]);
-//         }
-//         printf("\n");
-//     }
-// }
-
 void Count(int grille[MAX_Y][MAX_X]) {
     int temp[MAX_Y][MAX_X] = { 0 };
     for (int l = 0; l < MAX_Y; l++) {
