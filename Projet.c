@@ -114,19 +114,6 @@ int GrilleDebut(int grille[MAX_Y][MAX_X]) {
             SDL_SetRenderDrawColor(renderer, grid_cursor_ghost_color.r, grid_cursor_ghost_color.g, grid_cursor_ghost_color.b, grid_cursor_ghost_color.a);
             SDL_RenderFillRect(renderer, &grid_cursor_ghost);
         }
-        // SDL_SetRenderDrawColor(renderer, grid_cell_empty.r, grid_cell_empty.g, grid_cell_empty.b, grid_cell_empty.a);
-        // SDL_RenderPresent(renderer);
-
-        // SDL_SetRenderDrawColor(renderer, grid_line_color.r, grid_line_color.g,grid_line_color.b, grid_line_color.a);
-
-        // for (int x = 0; x < 1 + CELL_H * CELL_W;
-        //      x += CELL_W) {
-        //     SDL_RenderDrawLine(renderer, x, 0, x, HEIGHT);
-        // }
-        // for (int y = 0; y < 1 + CELL_H * CELL_H;
-        //      y += CELL_H) {
-        //     SDL_RenderDrawLine(renderer, 0, y, WIDTH, y);
-        // }
         
         SDL_SetRenderDrawColor(renderer, grid_cell_alive.r, grid_cell_alive.g, grid_cell_alive.b, grid_cell_alive.a);
         for (int i = 0; i < MAX_X; i++){
@@ -227,6 +214,7 @@ void Count(int grille[MAX_Y][MAX_X]) {
 
 int Mort(int grille[][MAX_X]) {
     int count_die = 0;
+    int mort = 1;
     for (int i = 0; i < MAX_Y; i++) {
         for (int j = 0; j < MAX_X; j++) {
             if (grille[i][j] == 0) {
@@ -235,8 +223,8 @@ int Mort(int grille[][MAX_X]) {
         }
     }
     if (count_die == MAX_X * MAX_Y) {
-        printf("C'est finit !");
-        return 1;    }
+        return 1;
+    }
     return 0;
 }
 
@@ -276,6 +264,8 @@ int main(int argc, char *argv[]) {
 
         // Pause for one second between each generation
         SDL_Delay(100);
+
+        mort  = Mort(grille);
 
         // Check for quit event
         while (SDL_PollEvent(&event)) {
